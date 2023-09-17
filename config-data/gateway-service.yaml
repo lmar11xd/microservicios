@@ -28,7 +28,5 @@ spring:
           uri: lb://bike-service
           predicates:
             - Path=/api/bikes/**
-
-spring:
   application:
     zipkin: http://localhost:9411
