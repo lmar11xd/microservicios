@@ -38,3 +38,15 @@ resilience4j.circuitbreaker:
             waitDurationInOpenState: 5s
             failureRateThreshold: 50
             eventConsumerBufferSize: 10
+
+management:
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  pattern:
+    level: %5p [${spring.application.name}, $X{traceId:-}, $X{spanId:-}]
