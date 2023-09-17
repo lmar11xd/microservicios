@@ -9,13 +9,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance-id}:${random.value}
 
-management:
-  zipkin:
-    tracing:
-      endpoint: http://localhost:9411
-    sampling:
-      probability: 1.0
-
-logging:
-  pattern:
-    level: "%clr{%5p} %clr{[%X{traceId}/%X{spanId}]}{yellow}"
+spring:
+  application:
+    zipkin: http://localhost:9411
